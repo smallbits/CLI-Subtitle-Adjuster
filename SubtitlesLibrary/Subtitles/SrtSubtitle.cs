@@ -19,7 +19,20 @@ namespace SubtitlesLibrary
         }
         public override string ToString()
         {
-            throw new NotImplementedException();
+            StringBuilder data = new StringBuilder();
+            foreach (SubtitleLine line in subtitleLines)
+            {
+                data.Append(GetLineText(line));
+            }
+
+            return data.ToString();
+        }
+
+        protected override string GetLineText(SubtitleLine line)
+        {
+            string data = $"{line.LineNumber}\n{line.StartTime:hh':'mm':'ss','fff} --> {line.EndTime:hh':'mm':'ss','fff}\n{line.Text}\n\n";
+
+            return data;
         }
     }
 }

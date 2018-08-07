@@ -10,5 +10,6 @@ namespace SubtitlesLibrary
     {
         protected List<SubtitleLine> subtitleLines = new List<SubtitleLine>();
         public abstract void Adjust();
+        protected abstract string GetLineText(SubtitleLine line);
     }
 }
