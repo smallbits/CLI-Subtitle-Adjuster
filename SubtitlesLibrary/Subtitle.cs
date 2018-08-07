@@ -6,17 +6,9 @@ using System.Threading.Tasks;
 
 namespace SubtitlesLibrary
 {
-    class Subtitle
+    abstract class Subtitle
     {
-        private List<SubtitleLine> subtitleLines = new List<SubtitleLine>();
-
-        public Subtitle(string input)
-        {
-            throw new NotImplementedException();
-        }
-        public void Adjust()
-        {
-            throw new NotImplementedException();
-        }
+        protected List<SubtitleLine> subtitleLines = new List<SubtitleLine>();
+        public abstract void Adjust();
     }
 }
