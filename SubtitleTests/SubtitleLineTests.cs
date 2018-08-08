@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 using SubtitlesLibrary;
 
@@ -10,6 +6,7 @@ namespace SubtitleTests
 {
     public class SubtitleLineTests
     {
+        // Testing if SrtSubtitleLine returns string in expected format based on it's properties.
         [Fact]
         public void ToString_ShouldReturnCorrectString()
         {
@@ -27,6 +24,7 @@ namespace SubtitleTests
             //Assert
             Assert.Equal(expected, actual);
         }
+        //Testing if SrtSubtitleLine constructor is properly creating instance based on input string
         [Fact]
         public void Test_SrtInstanceCreation_LineNumber()
         {
