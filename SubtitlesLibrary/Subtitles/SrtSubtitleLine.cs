@@ -1,6 +1,6 @@
 ﻿namespace SubtitlesLibrary
 {
-    class SrtSubtitleLine : SubtitleLine
+    public class SrtSubtitleLine : SubtitleLine
     {
         public override string ToString()
         {

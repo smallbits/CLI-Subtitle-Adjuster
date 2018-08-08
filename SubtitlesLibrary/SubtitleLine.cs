@@ -2,7 +2,7 @@
 
 namespace SubtitlesLibrary
 {
-    abstract class SubtitleLine
+    public abstract class SubtitleLine
     {
         public bool HasLineNumber { get; set; }
         public int LineNumber { get; set; }

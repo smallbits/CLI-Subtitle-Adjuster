@@ -45,6 +45,7 @@
     <Compile Include="SubtitleFactory.cs" />
     <Compile Include="SubtitleLine.cs" />
     <Compile Include="Subtitles\SrtSubtitle.cs" />
+    <Compile Include="Subtitles\SrtSubtitleLine.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
