@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SubtitlesLibrary
 {
-    abstract class Subtitle
+    public abstract class Subtitle
     {
         protected List<SubtitleLine> subtitleLines = new List<SubtitleLine>();
         public void Adjust(TimeSpan amount) {

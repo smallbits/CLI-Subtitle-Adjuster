@@ -3,7 +3,7 @@ using System.Text;
 
 namespace SubtitlesLibrary
 {
-    class SrtSubtitle : Subtitle
+    public class SrtSubtitle : Subtitle
     {
         public SrtSubtitle(string input)
         {
