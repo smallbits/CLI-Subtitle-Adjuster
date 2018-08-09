@@ -1,5 +1,6 @@
-﻿using SubtitlesLibrary;
-using System;
+﻿using System;
+using System.IO;
+using SubtitlesLibrary;
 
 namespace SubtitleAdjuster
 {
@@ -7,6 +8,9 @@ namespace SubtitleAdjuster
     {
         public static string HelpMessage { get; set; }
         public static string ErrorMessage { get; set; }
+
+        public static string InputFile { get; set; }
+        public static string OutputFile { get; set; }
         public static string FileExtension { get; set; }
 
         public static Subtitle SubtitleInstance { get; set; }
@@ -21,19 +25,21 @@ namespace SubtitleAdjuster
         }
         private static void PrintHelp()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(HelpMessage);
         }
         private static void PrintError()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(ErrorMessage);
+            PrintHelp();
         }
         private static bool ComfirmOverride()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Output file not specified, type \"yes\" if you want to override current one:");
+            return string.Equals(Console.ReadLine(), "yes", StringComparison.CurrentCultureIgnoreCase);
         }
         private static void WriteFile()
         {
-            throw new NotImplementedException();
+            File.WriteAllLines(file)
         }
     }
     public delegate void DoTasks();
