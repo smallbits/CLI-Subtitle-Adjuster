@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SubtitlesLibrary
 {
-    static class SubtitleFactory
+    public static class SubtitleFactory
     {
         public static Subtitle Create(string extension, string input)
         {
