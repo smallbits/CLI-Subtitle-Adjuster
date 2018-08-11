@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace SubtitlesLibrary
 {
@@ -7,7 +9,12 @@ namespace SubtitlesLibrary
     {
         public SrtSubtitle(string input)
         {
-            throw new NotImplementedException();
+            string[] textLines = Regex.Split(input, @"\r\n\r\n");
+            foreach (var line in textLines)
+            {
+                SubtitleLine subtitleLine = new SrtSubtitleLine(line);
+                subtitleLines.Add(subtitleLine);
+            }
         }
         public override string ToString()
         {
@@ -15,8 +22,10 @@ namespace SubtitlesLibrary
             foreach (SubtitleLine line in subtitleLines)
             {
                 data.Append(line.ToString());
+                data.AppendLine();
+                data.AppendLine();
             }
-
+            data.Remove(data.Length - 4, 4);
             return data.ToString();
         }
     }

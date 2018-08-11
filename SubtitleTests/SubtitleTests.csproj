@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubtitleLineTests.cs" />
+    <Compile Include="SubtitleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -11,7 +11,7 @@ namespace SubtitleTests
         public void ToString_ShouldReturnCorrectString()
         {
             //Arrange
-            string expected = "8\n00:01:23,459 --> 00:01:24,876\nWe did it, Pete.We did it.";
+            string expected = "8\r\n00:01:23,459 --> 00:01:24,876\r\nWe did it, Pete.We did it.";
             SrtSubtitleLine subtitleLine = new SrtSubtitleLine()
             {
                 LineNumber = 8,

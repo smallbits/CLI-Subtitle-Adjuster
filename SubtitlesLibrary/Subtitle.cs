@@ -5,11 +5,11 @@ namespace SubtitlesLibrary
 {
     public abstract class Subtitle
     {
-        protected List<SubtitleLine> subtitleLines = new List<SubtitleLine>();
+        public List<SubtitleLine> subtitleLines = new List<SubtitleLine>();
         public void Adjust(TimeSpan amount) {
-            foreach (SubtitleLine line in subtitleLines)
+            for (int i = 0; i < subtitleLines.Count; i++)
             {
-                line.AdjustTime(amount);
+                subtitleLines[i].AdjustTime(amount);
             }
         }
     }

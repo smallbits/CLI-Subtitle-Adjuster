@@ -38,6 +38,7 @@ namespace SubtitleAdjuster
         }
         private static void WriteFile()
         {
+            SubtitleInstance.Adjust(AdjustAmount);
             File.WriteAllText(OutputFile, SubtitleInstance.ToString());
         }
         public static DoTasks ParseInput(string[] input)
@@ -58,6 +59,7 @@ namespace SubtitleAdjuster
             int index = OverrideFile ? 1 : 2;
             if (input[index].Equals("hastened", StringComparison.CurrentCultureIgnoreCase)) AdjustType = false;
             else if (input[index].Equals("delayed", StringComparison.CurrentCultureIgnoreCase)) AdjustType = true;
+            else return PrintError;
             AdjustAmount = TimeSpan.Parse(input[index + 1]);
             if (AdjustType == false) AdjustAmount = AdjustAmount.Negate();
             return WriteFile;

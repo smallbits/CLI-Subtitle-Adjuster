@@ -12,10 +12,10 @@ namespace SubtitlesLibrary
         {
             switch (extension.ToLower())
             {
-                case "srt":
+                case ".srt":
                     return new SrtSubtitle(input);
                 default:
-                    throw new ArgumentException("File extension not recognized");
+                    throw new ArgumentException($"File extension not recognized: {extension}");
             }
         }
     }

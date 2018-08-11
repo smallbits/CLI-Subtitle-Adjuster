@@ -12,8 +12,8 @@ namespace SubtitlesLibrary
 
         public void AdjustTime(TimeSpan amount)
         {
-            StartTime += amount;
-            EndTime += amount;
+            StartTime = StartTime + amount;
+            EndTime = EndTime + amount;
         }
     }
 }
