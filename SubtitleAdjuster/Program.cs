@@ -10,7 +10,7 @@ namespace SubtitleAdjuster
     {
         static void Main(string[] args)
         {
-            SubtitleController.DoAppTasks = SubtitleController.ParseInput(args);
+            SubtitleController.DoAppTasks = InputParser.ParseFirst(args);
             SubtitleController.DoAppTasks.Invoke();
         }
     }

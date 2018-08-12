@@ -15,17 +15,6 @@ namespace SubtitleTests
         public void Srt_TextSpliting()
         {
             //Arrange
-            string input = @"1708
-01:34:46,181 --> 01:34:47,848
-Hey!
-
-1709
-01:34:52,187 --> 01:34:53,854
-What's your name?
-
-1710
-01:34:53,938 --> 01:34:55,439
-Davis.";
             string[] expected = new string[]
             {
                 @"1708
