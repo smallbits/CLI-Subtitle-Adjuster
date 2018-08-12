@@ -8,8 +8,9 @@ namespace SubtitleAdjuster
 
     public static class SubtitleController
     {
-        public static string HelpMessage { get; } = "Help message";
-        public static string ErrorMessage { get; } = "Error message";
+        public static string HelpMessage { get; } = 
+        "Input format:\r\n\t<input-file> [<output-file>] adjust-type adjust-amount\r\nadjust-type:\r\n\thastened, delayed\r\nadjust-amount:\r\n\thh:mm:ss,fff\r\nExample:\r\n\tinput.srt output.srt delayed 00:02:14,270";
+        public static string ErrorMessage { get; } = "Error has occured!";
 
         public static string InputFile { get; set; }
         public static string OutputFile { get; set; }
