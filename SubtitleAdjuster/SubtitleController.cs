@@ -8,14 +8,16 @@ namespace SubtitleAdjuster
 
     public static class SubtitleController
     {
-        public static string HelpMessage { get; } = 
+        public static string HelpMessage { get; } =
         "Input format:\r\n\t<input-file> [<output-file>] adjust-type adjust-amount\r\nadjust-type:\r\n\thastened, delayed\r\nadjust-amount:\r\n\thh:mm:ss,fff\r\nExample:\r\n\tinput.srt output.srt delayed 00:02:14,270";
         public static string ErrorMessage { get; } = "Error has occured!";
 
         public static string InputFile { get; set; }
         public static string OutputFile { get; set; }
         public static string InFileExtension { get; set; }
-        public static string OutFileExtension { get; set;
+        public static string OutFileExtension
+        {
+            get; set;
         }
 
         public static Subtitle SubtitleInstance { get; set; }
@@ -41,7 +43,10 @@ namespace SubtitleAdjuster
         public static void WriteFile()
         {
             SubtitleInstance.Adjust(AdjustAmount);
-            if (OverrideFile) File.Delete(InputFile);
+            if (OverrideFile)
+            {
+                File.SetAttributes(InputFile, FileAttributes.Normal);
+            }
             File.WriteAllText(OutputFile, SubtitleInstance.ToString());
         }
         private static bool CheckInputFile(string path)
@@ -59,6 +64,6 @@ namespace SubtitleAdjuster
             OutputFile = path;
             OutFileExtension = Path.GetExtension(path);
         }
-        
+
     }
 }

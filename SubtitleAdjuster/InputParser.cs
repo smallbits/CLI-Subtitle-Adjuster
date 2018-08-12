@@ -1,6 +1,7 @@
 ﻿using SubtitlesLibrary;
 using System;
 using System.IO;
+using System.Text;
 
 namespace SubtitleAdjuster
 {
@@ -15,6 +16,7 @@ namespace SubtitleAdjuster
             if (firstArg.Equals("help", StringComparison.CurrentCultureIgnoreCase)) return SubtitleController.PrintHelp;
             if (input.Length == 1) return SubtitleController.PrintError;
             if (CheckInputFile(firstArg) == false) return SubtitleController.PrintError;
+            Console.WriteLine(sr.CurrentEncoding);
             SubtitleController.SubtitleInstance = SubtitleFactory.Create(SubtitleController.InFileExtension, File.ReadAllText(SubtitleController.InputFile));
             return ParseSecond(input[1]);
         }
@@ -26,7 +28,6 @@ namespace SubtitleAdjuster
                 if (ComfirmOverride() == false) return SubtitleController.PrintError;
                 else
                 {
-                    Console.WriteLine("It is false.");
                     SubtitleController.OutputFile = SubtitleController.InputFile;
                     SubtitleController.OutFileExtension = SubtitleController.InFileExtension;
                 }
@@ -82,8 +83,8 @@ namespace SubtitleAdjuster
         private static bool ComfirmOverride()
         {
             Console.WriteLine("Output file not specified, type \"yes\" if you want to override current one:");
-            bool doOverride = string.Equals(Console.ReadLine(), "yes", StringComparison.CurrentCultureIgnoreCase);
-            return doOverride;
+            SubtitleController.OverrideFile = string.Equals(Console.ReadLine(), "yes", StringComparison.CurrentCultureIgnoreCase);
+            return SubtitleController.OverrideFile;
         }
     }
 }

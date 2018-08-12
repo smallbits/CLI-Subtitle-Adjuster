@@ -9,6 +9,7 @@ namespace SubtitlesLibrary
     {
         public SrtSubtitle(string input)
         {
+            input = input.Trim();
             string[] textLines = Regex.Split(input, @"\r\n\r\n");
             foreach (var line in textLines)
             {
